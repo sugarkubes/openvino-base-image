@@ -1,0 +1,36 @@
+FROM sugarkubes/openvino:latest as RELEASE
+RUN apt-get update && apt-get install -y \
+  wget \
+  unzip \
+  libglib2.0-0 \
+  libsm6 \
+  libxrender1 \
+  libxext6 \
+  vim
+
+# You need to have your models in the openvino format which
+# is a .bin and .xml. It's kind of a pain to get them into this format using
+# their model converter but the documentation to do that is here https://software.intel.com/en-us/articles/OpenVINO-Using-TensorFlow
+
+# Once you have a converted model, zip the model into a folder. Make sure the following structure is in place once unzipped
+# <model-name>/<version-number>/<model-name>.*
+
+# Grab your models somehow
+RUN wget -P /opt/ml https://s3.us-west-1.wasabisys.com/public.sugarkubes/repos/sugar-cv/intel-object-detection/ssd_mobilenet_v2_oid_v4_2018_12_12.zip
+
+# Unzip them
+RUN cd /opt/ml && unzip ssd_mobilenet_v2_oid_v4_2018_12_12.zip
+
+# Copy your files into the container, generally this just needs to be
+# some kind of api.py and requirements.txt
+COPY . /var/sugar/
+RUN . .venv/bin/activate && \
+    pip3 install -r /var/sugar/requirements.txt
+
+# In this directory, modify the model_configuration_file.json to refer to your models. See README
+RUN mv /var/sugar/model_configuration_file.json /opt/ml/config.json
+
+# Start script if that's how you want to do things
+RUN chmod +x /var/sugar/start.sh
+EXPOSE 9090
+CMD ["/var/sugar/start.sh"]

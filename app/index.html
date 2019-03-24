@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Object Detection</title>
+    <link rel="stylesheet" href="/tester/style.css">
+    <script src="/tester/index.js"></script>
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" type="image/png" href="/tester/favicon.png"/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600"
+    />
+  </head>
+  <body>
+    <div class="flex">
+      <img src="/tester/logo.png" />
+    </div>
+    <div class="flex">
+      <h1>Object Detection</h1>
+    </div>
+    <div class="flex">
+        <form id="form" onsubmit="event.preventDefault; formSubmit(event);" class="flex">
+          <input id="host-field" name="host" placeholder="Full path of host"  value="http://0.0.0.0:9090" />
+          <input name="url" placeholder="image url" value="https://s3.us-west-1.wasabisys.com/public.sugarkubes/repos/sugar-cv/object-detection/friends.jpg" />
+          <button type="submit" class="btn btn-5">Submit</button>
+        </form>
+    </div>
+    <div class="flex">
+      <p id="time"></p>
+    </div>
+    <div class="flex">
+      <img id="result" class="result" />
+    </div>
+    <div class="flex">
+      <p id="json" class="jsonResults"></p>
+    </div>
+    <div class="bottom-container">
+        <img src="/tester/bottom.png" class="footer"/>
+    </div>
+  </body>
+</html>

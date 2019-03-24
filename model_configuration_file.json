@@ -1,0 +1,12 @@
+{
+   "model_config_list":[
+      {
+         "config": {
+            "name":"ssd_mobilenet_v2_oid_v4_2018_12_12",
+            "base_path":"/opt/ml/ssd_mobilenet_v2_oid_v4_2018_12_12",
+            "batch_size": "auto",
+            "model_version_policy": {"all": {}}
+         }
+      }
+    ]
+}
