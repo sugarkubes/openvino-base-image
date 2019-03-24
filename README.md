@@ -2,7 +2,7 @@
 
 **Thanks for visiting! Inside this repo you'll find a FREE SugarKube!**
 
-*Like what you see? check us out at (sugarkubes.io)[https://sugarkubes.io]*
+*Like what you see? Check us out at [sugarkubes.io](https://sugarkubes.io)*
 
 ## What is openvino?
 
