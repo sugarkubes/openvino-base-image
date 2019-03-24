@@ -154,7 +154,7 @@ curl -X POST \
 
 ## Free SugarKube!
 
-![Demo!](./demo.mov?raw=true)
+![Demo!](./demo.gif?raw=true)
 
 Inside this repo is all the code and a docker file needed to run the intel-object-detection SugarKube.
 
