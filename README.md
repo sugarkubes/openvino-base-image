@@ -166,7 +166,7 @@ Visit [http://0.0.0.0:9090/tester/index.html](http://0.0.0.0:9090/tester/index.h
 
 
 
-![Example Response!](https://s3.us-west-1.wasabisys.com/public.sugarkubes/repos/sugar-cv/intel-object-detection/object-example.png)
+![Example Response!](./demo.png?raw=true)
 
 ```sh
 # Example Output
