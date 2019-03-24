@@ -154,7 +154,7 @@ curl -X POST \
 
 ## Free SugarKube!
 
-![Demo!](https://s3.us-west-1.wasabisys.com/public.sugarkubes/repos/sugar-cv/intel-object-detection/intel-object-detection.mov)
+![Demo!](./demo.mov?raw=true)
 
 Inside this repo is all the code and a docker file needed to run the intel-object-detection SugarKube.
 
