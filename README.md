@@ -39,7 +39,8 @@ RUN apt-get update && apt-get install -y \
   vim
 ```
 
-Fortunately I already converted a model for you guys and gals so just go ahead and grab the model (code is below).
+### Packaging the model
+Fortunately I already converted a model for you guys and gals so feel free to skip this section and grab the model (code is below).
 
 Once you have a converted model, zip the model into a folder. Make sure the following structure is in place once unzipped.
 ```sh
@@ -52,11 +53,16 @@ ssd_mobilenet_v2_oid_v4_2018_12_12/1/ssd_mobilenet_v2_oid_v4_2018_12_12.xml
 ```
 
 Since all this is done for you just grab the models. The openvino base image expects them under */opt/ml/ssd_mobilenet_v2_oid_v4_2018_12_12/1/ssd_mobilenet_v2_oid_v4_2018_12_12.bin*.
+
+### Pull the model
+
 ```sh
 RUN wget -P /opt/ml https://s3.us-west-1.wasabisys.com/public.sugarkubes/repos/sugar-cv/intel-object-detection/ssd_mobilenet_v2_oid_v4_2018_12_12.zip
 RUN cd /opt/ml && unzip ssd_mobilenet_v2_oid_v4_2018_12_12.zip
-
 ```
+
+
+### Adjust configs
 Now go into the model_configuration_file.json included in this repo. Make sure for new models you change the name, but here it is done for this ssd model.
 
 
@@ -99,6 +105,8 @@ openvino model server allows for various models to be loaded at the same time, a
     ]
 }
 ```
+
+### Add a simple api
 
 Finally, copy all the code from the repo into the docker container including our configs, and api.py  to run the python server.
 
