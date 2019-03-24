@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y \
   vim
 ```
 
-Fortunately I already converted a model for you guys and gals so just go ahead and grab the model.
+Fortunately I already converted a model for you guys and gals so just go ahead and grab the model (code is below).
 
 Once you have a converted model, zip the model into a folder. Make sure the following structure is in place once unzipped.
 ```sh
