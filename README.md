@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y \
   vim
 ```
 
-You need to have your models in the openvino format which is a .bin and .xml file. It's kind of a pain to get them into this format using their model converter but the documentation to do that is [here](https://software.intel.com/en-us/articles/OpenVINO-Using-TensorFlow). Fortunately I already did this for you guys and gals so just go ahead and grab the model.
+Fortunately I already converted a model for you guys and gals so just go ahead and grab the model.
 
 Once you have a converted model, zip the model into a folder. Make sure the following structure is in place once unzipped.
 ```sh
